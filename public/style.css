@@ -1,0 +1,18 @@
+body {
+    place-items: center;
+}
+
+#clock {
+    background-color: cadetblue;
+}
+
+.strip {
+    text-align: center;
+    vertical-align: center;
+    background-color: red;
+    width: 1cm;
+    height: 10cm;
+    border: 1px;
+    border-style: solid;
+    border-color: brown;
+}
