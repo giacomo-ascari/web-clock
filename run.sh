@@ -1,1 +1,1 @@
-docker run -it --restart unless-stopped -p 80:80 --name web-clock-instance web-clock
+docker run -d --restart unless-stopped -p 2607:80 web-clock
