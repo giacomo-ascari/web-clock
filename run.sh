@@ -1,1 +1,0 @@
-docker run -d --restart unless-stopped -p 2607:80 web-clock
