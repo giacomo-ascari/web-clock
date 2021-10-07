@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  web-clock:
+    build: "."
+    image: "web-clock"
+    ports:
+      - "${DOCKER_PORT}:80"
+    restart: "unless-stopped"
