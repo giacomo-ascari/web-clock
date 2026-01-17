@@ -1,32 +1,36 @@
-console.log("ON")
-
 let strips = [];
-
 let c = 6;
-let w = 720, h = 900;
 let bw = 75, bh = 40, bd = 100;
 let pad = 20;
 let t = 38;
 let adj = 10;
 
-function onload() {
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-    console.log(vw.toString() + ", " + vh.toString());
+let font;
+
+function getViewportSize() {
+    const vw = Math.min(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.min(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    return {width: vw, height: vh};
+}
+
+function windowResized() {
+    let r = getViewportSize();
+    resizeCanvas(r.width, r.height);
 }
 
 function preload() {
-    font = loadFont("Rajdhani-SemiBold.ttf")
+    font = loadFont('Rajdhani-SemiBold.ttf');
 }
 
 function setup() {
-    createCanvas(w, h, WEBGL);
+    let r = getViewportSize();
+    createCanvas(r.width, r.height, WEBGL);
     noStroke();
-    textFont(font);
     textSize(t);
     textAlign(CENTER, CENTER);
+    textFont(font);
     rectMode(CENTER);
-    smooth();
+    frameRate(30);
 
     for (let i = 0; i < c; i++) {
         let strip = {
