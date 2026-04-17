@@ -1,0 +1,6 @@
+services:
+  clock:
+    build: ./
+    restart: unless-stopped
+    ports:
+      - "${PORT}:80"

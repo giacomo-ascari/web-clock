@@ -8,8 +8,8 @@ let adj = 10;
 let font;
 
 function getViewportSize() {
-    const vw = Math.min(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    const vh = Math.min(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    const vw = Math.min(document.documentElement.clientWidth || 0, window.innerWidth || 0) - 20;
+    const vh = Math.min(document.documentElement.clientHeight || 0, window.innerHeight || 0) - 20;
     return {width: vw, height: vh};
 }
 
